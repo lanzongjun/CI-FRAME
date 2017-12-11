@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 class Welcome extends CI_Controller {
 
 	/**
@@ -20,6 +21,13 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+        /**
+         * @property CI_Benchmark $benchmark
+         */
+	    $this->benchmark->mark('function_test_start');
+
+        $this->benchmark->mark('function_test_end');
+
+	    $this->load->view('welcome_message');
 	}
 }
